@@ -97,7 +97,7 @@ function Leaderboard() {
           ))}
         </div>
 
-        <div
+        {/* <div
           style={{
             display: "flex",
             justifyContent: "center",
@@ -112,6 +112,21 @@ function Leaderboard() {
               background: "linear-gradient(135deg,#d1d5db,#9ca3af)",
               color: "#fff",
               boxShadow: "0 5px 20px rgba(156,163,175,0.4)",
+              padding: "20px",
+              borderRadius: "16px",
+              minWidth: "180px",
+            }}
+          >
+            <h1>🥇</h1>
+            <h2>{top1?.username || "-"}</h2>
+            <p>{top1?.points || 0} Points</p>
+          </div>
+
+          <div
+            style={{
+              background: "linear-gradient(135deg,#d97706,#92400e)",
+              color: "#fff",
+              boxShadow: "0 5px 20px rgba(146,64,14,0.4)",
               padding: "20px",
               borderRadius: "16px",
               minWidth: "180px",
@@ -133,24 +148,77 @@ function Leaderboard() {
               transform: "scale(1.1)",
             }}
           >
+            <h1>🥉</h1>
+            <h3>{top3?.username || "-"}</h3>
+            <p>{top3?.points || 0} Points</p>
+          </div>
+        </div> */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "20px",
+          }}
+        >
+          {/* First Place */}
+          <div
+            style={{
+              background: "linear-gradient(135deg,#facc15,#eab308)",
+              color: "#fff",
+              boxShadow: "0 5px 20px rgba(234,179,8,0.4)",
+              padding: "30px",
+              borderRadius: "16px",
+              minWidth: "220px",
+              textAlign: "center",
+              transform: "scale(1.1)",
+            }}
+          >
             <h1>🥇</h1>
             <h2>{top1?.username || "-"}</h2>
             <p>{top1?.points || 0} Points</p>
           </div>
 
+          {/* Second & Third */}
           <div
             style={{
-              background: "linear-gradient(135deg,#d97706,#92400e)",
-              color: "#fff",
-              boxShadow: "0 5px 20px rgba(146,64,14,0.4)",
-              padding: "20px",
-              borderRadius: "16px",
-              minWidth: "180px",
+              display: "flex",
+              gap: "15px",
+              flexWrap: "wrap",
+              justifyContent: "center",
             }}
           >
-            <h1>🥉</h1>
-            <h3>{top3?.username || "-"}</h3>
-            <p>{top3?.points || 0} Points</p>
+            <div
+              style={{
+                background: "linear-gradient(135deg,#d1d5db,#9ca3af)",
+                color: "#fff",
+                boxShadow: "0 5px 20px rgba(156,163,175,0.4)",
+                padding: "20px",
+                borderRadius: "16px",
+                minWidth: "180px",
+                textAlign: "center",
+              }}
+            >
+              <h1>🥈</h1>
+              <h3>{top2?.username || "-"}</h3>
+              <p>{top2?.points || 0} Points</p>
+            </div>
+
+            <div
+              style={{
+                background: "linear-gradient(135deg,#d97706,#92400e)",
+                color: "#fff",
+                boxShadow: "0 5px 20px rgba(146,64,14,0.4)",
+                padding: "20px",
+                borderRadius: "16px",
+                minWidth: "180px",
+                textAlign: "center",
+              }}
+            >
+              <h1>🥉</h1>
+              <h3>{top3?.username || "-"}</h3>
+              <p>{top3?.points || 0} Points</p>
+            </div>
           </div>
         </div>
 

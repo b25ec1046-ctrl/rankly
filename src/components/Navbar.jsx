@@ -214,13 +214,13 @@ function Navbar() {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             style={{
-              width: "48px",
-              height: "48px",
-              borderRadius: "14px",
+              width: "38px",
+              height: "34px",
+              borderRadius: "10px",
               border: "none",
               background: "linear-gradient(135deg,#3b82f6,#8b5cf6)",
               color: "#fff",
-              fontSize: "24px",
+              fontSize: "22px",
               cursor: "pointer",
               boxShadow: "0 10px 25px rgba(59,130,246,0.35)",
             }}

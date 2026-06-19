@@ -151,8 +151,8 @@ function BottomNav() {
 
           // width: "50px",
           // height: "50px",
-          width: window.innerWidth <= 768 ? "52px" : "60px",
-          height: window.innerWidth <= 768 ? "52px" : "60px",
+          width: window.innerWidth <= 768 ? "46px" : "60px",
+          height: window.innerWidth <= 768 ? "46px" : "60px",
 
           borderRadius: "50%",
 
@@ -173,7 +173,7 @@ function BottomNav() {
           zIndex: 1001,
         }}
       >
-        <FaPlus size={28} />
+        <FaPlus size={window.innerWidth <= 768 ? 20 : 28} />
       </Link>
 
       {/* Bottom Bar */}
@@ -183,9 +183,10 @@ function BottomNav() {
           position: "fixed",
 
           bottom: "4px",
-          left: "12px",
-          right: "12px",
-          height: "78px",
+          left: "6px",
+          right: "6px",
+          // height: "78px",
+          height: window.innerWidth <= 768 ? "68px" : "78px",
           background: "rgba(255,255,255,0.9)",
 
           backdropFilter: "blur(20px)",
@@ -197,7 +198,8 @@ function BottomNav() {
           boxShadow: "0 10px 35px rgba(0,0,0,0.12)",
 
           display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr 1fr",
+          // gridTemplateColumns: "1fr 1fr 1fr 1fr",
+          gridTemplateColumns: "1fr 1fr 0.8fr 1fr 1fr",
 
           alignItems: "center",
 
@@ -206,22 +208,46 @@ function BottomNav() {
           zIndex: 1000,
         }}
       >
-        <Link to="/" style={navItemStyle("/")}>
+        <Link
+          to="/"
+          style={{
+            ...navItemStyle("/"),
+            gridColumn: 1,
+          }}
+        >
           <FaHome size={22} />
           <span>Home</span>
         </Link>
 
-        <Link to="/trending" style={navItemStyle("/trending")}>
+        <Link
+          to="/trending"
+          style={{
+            ...navItemStyle("/trending"),
+            gridColumn: 2,
+          }}
+        >
           <FaFire size={22} />
           <span>Trending</span>
         </Link>
 
-        <Link to="/leaderboard" style={navItemStyle("/leaderboard")}>
+        <Link
+          to="/leaderboard"
+          style={{
+            ...navItemStyle("/leaderboard"),
+            gridColumn: 4,
+          }}
+        >
           <FaTrophy size={22} />
           <span>Rank</span>
         </Link>
 
-        <Link to="/profile" style={navItemStyle("/profile")}>
+        <Link
+          to="/profile"
+          style={{
+            ...navItemStyle("/profile"),
+            gridColumn: 5,
+          }}
+        >
           <FaUser size={22} />
           <span>Profile</span>
         </Link>
