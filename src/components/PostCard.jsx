@@ -185,7 +185,9 @@ function PostCard({
                   margin: 0,
                   fontSize: window.innerWidth <= 768 ? "16px" : "18px",
                 }}
-              ></h3>
+              >
+                {username}
+              </h3>
             </Link>
 
             <span
