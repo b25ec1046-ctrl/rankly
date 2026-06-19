@@ -145,12 +145,14 @@ function BottomNav() {
           position: "fixed",
 
           left: "50%",
-          bottom: "25px",
+          bottom: "20px",
 
           transform: "translateX(-50%)",
 
-          width: "50px",
-          height: "50px",
+          // width: "50px",
+          // height: "50px",
+          width: window.innerWidth <= 768 ? "52px" : "60px",
+          height: window.innerWidth <= 768 ? "52px" : "60px",
 
           borderRadius: "50%",
 
@@ -183,9 +185,7 @@ function BottomNav() {
           bottom: "12px",
           left: "12px",
           right: "12px",
-
           height: "78px",
-
           background: "rgba(255,255,255,0.9)",
 
           backdropFilter: "blur(20px)",

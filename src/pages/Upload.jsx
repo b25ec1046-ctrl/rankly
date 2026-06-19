@@ -106,10 +106,15 @@ function Upload() {
     <>
       <div
         style={{
+          // maxWidth: "700px",
+          // margin: "30px auto",
+          // padding: "20px",
+          // paddingBottom: "90px",
           maxWidth: "700px",
-          margin: "30px auto",
-          padding: "20px",
-          paddingBottom: "90px",
+          width: "100%",
+          margin: "20px auto",
+          padding: "12px",
+          boxSizing: "border-box",
         }}
       >
         <button
@@ -134,7 +139,9 @@ function Upload() {
             style={{
               background: "#fff",
               marginTop: "20px",
-              padding: "20px",
+              //  padding: "20px",
+              padding: window.innerWidth <= 768 ? "15px" : "20px",
+              boxSizing: "border-box",
               borderRadius: "15px",
               boxShadow: "0 2px 15px rgba(0,0,0,0.08)",
             }}
@@ -188,6 +195,7 @@ function Upload() {
                 width: "100%",
                 padding: "10px",
                 borderRadius: "8px",
+                boxSizing: "border-box",
               }}
             />
 
@@ -198,8 +206,12 @@ function Upload() {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               style={{
-                padding: "10px",
+                // padding: "10px",
+                // borderRadius: "8px",
+                width: "100%",
+                padding: "12px",
                 borderRadius: "8px",
+                boxSizing: "border-box",
               }}
             >
               <option>General</option>
@@ -229,7 +241,11 @@ function Upload() {
                 src={image}
                 alt="preview"
                 style={{
+                  // width: "100%",
                   width: "100%",
+                  height: "250px",
+                  objectFit: "cover",
+                  borderRadius: "12px",
                   marginTop: "20px",
                   borderRadius: "12px",
                 }}
@@ -242,6 +258,7 @@ function Upload() {
               style={{
                 marginTop: "20px",
                 padding: "12px 25px",
+
                 background: canUpload ? "#2563eb" : "#9ca3af",
                 color: "#fff",
                 border: "none",

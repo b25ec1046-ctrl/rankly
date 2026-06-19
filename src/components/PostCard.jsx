@@ -120,7 +120,7 @@ function PostCard({
         color: "#fff",
 
         borderRadius: "18px",
-        padding: "18px",
+        padding: window.innerWidth <= 768 ? "12px" : "18px",
         marginTop: "20px",
       }}
     >
@@ -179,7 +179,13 @@ function PostCard({
                 fontWeight: "bold",
               }}
             >
-              <h3 style={{ margin: 0 }}>{username}</h3>
+              {/* <h3 style={{ margin: 0 }}>{username}</h3> */}
+              <h3
+                style={{
+                  margin: 0,
+                  fontSize: window.innerWidth <= 768 ? "16px" : "18px",
+                }}
+              ></h3>
             </Link>
 
             <span
@@ -213,7 +219,7 @@ function PostCard({
 
       <p style={{ marginTop: "15px" }}>{caption}</p>
 
-      <img
+      {/* <img
         src={image}
         alt="post"
         style={{
@@ -221,12 +227,32 @@ function PostCard({
           borderRadius: "12px",
           marginTop: "10px",
         }}
+      /> */}
+      <img
+        src={image}
+        alt="post"
+        onDoubleClick={async () => {
+          if (!liked) {
+            await likePost(id);
+            setLiked(true);
+            fetchLikes();
+          }
+        }}
+        style={{
+          width: "100%",
+          height: window.innerWidth <= 768 ? "220px" : "350px",
+          objectFit: "cover",
+          borderRadius: "12px",
+          marginTop: "10px",
+          cursor: "pointer",
+        }}
       />
 
       <div
         style={{
           display: "flex",
           gap: "10px",
+          flexWrap: "wrap",
           marginTop: "15px",
         }}
       >
@@ -253,7 +279,35 @@ function PostCard({
           💬 {comments.length}
         </button>
 
-        <button onClick={() => alert("Share feature coming soon 🚀")}>
+        {/* <button
+          onClick={() =>
+            navigator.share({
+              title: "Rankly Post",
+              text: caption,
+              url: window.location.href,
+            })
+          }
+        >
+          ↗️ Share
+        </button> */}
+        <button
+          onClick={async () => {
+            try {
+              if (navigator.share) {
+                await navigator.share({
+                  title: "Rankly Post",
+                  text: caption,
+                  url: window.location.href,
+                });
+              } else {
+                await navigator.clipboard.writeText(window.location.href);
+                alert("Link copied to clipboard ✅");
+              }
+            } catch (err) {
+              console.log(err);
+            }
+          }}
+        >
           ↗️ Share
         </button>
       </div>
@@ -302,7 +356,9 @@ function PostCard({
               onChange={(e) => setComment(e.target.value)}
               style={{
                 padding: "10px",
-                width: "70%",
+                // width: "70%",
+                width: "100%",
+                boxSizing: "border-box",
                 borderRadius: "8px",
                 border: "1px solid #ddd",
               }}

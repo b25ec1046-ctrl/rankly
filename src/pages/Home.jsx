@@ -17,7 +17,10 @@ function Home() {
         style={{
           maxWidth: "700px",
           margin: "auto",
-          padding: "20px",
+          width: "100%",
+          boxSizing: "border-box",
+          // padding: "20px",
+          padding: window.innerWidth <= 768 ? "12px" : "20px",
           paddingBottom: "100px",
         }}
       >
@@ -25,6 +28,7 @@ function Home() {
           style={{
             color: "#2563eb",
             marginBottom: "20px",
+            fontSize: window.innerWidth <= 768 ? "22px" : "28px",
           }}
         >
           🏠 Home Feed

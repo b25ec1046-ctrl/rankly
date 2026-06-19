@@ -50,8 +50,8 @@ function Navbar() {
             src={logo}
             alt="Rankly"
             style={{
-              width: "48px",
-              height: "48px",
+              width: "40px",
+              height: "40px",
               borderRadius: "50%",
               boxShadow: "0 0 25px rgba(59,130,246,0.5)",
             }}
@@ -63,7 +63,7 @@ function Navbar() {
                 margin: 0,
                 color: "#fff",
                 fontWeight: "800",
-                fontSize: "24px",
+                fontSize: "20px",
               }}
             >
               Rankly
@@ -159,7 +159,9 @@ function Navbar() {
                     background: "transparent",
                     color: "#fff",
                     border: "1px solid rgba(255,255,255,0.2)",
-                    padding: "10px 18px",
+                    // padding: "10px 18px",
+                    padding: "8px 12px",
+                    fontSize: "14px",
                     borderRadius: "12px",
                     cursor: "pointer",
                     fontWeight: "600",
@@ -175,7 +177,9 @@ function Navbar() {
                     background: "linear-gradient(135deg,#3b82f6,#8b5cf6)",
                     color: "#fff",
                     border: "none",
-                    padding: "10px 18px",
+                    // padding: "10px 18px",
+                    padding: "8px 12px",
+                    fontSize: "14px",
                     borderRadius: "12px",
                     cursor: "pointer",
                     fontWeight: "700",
@@ -187,7 +191,7 @@ function Navbar() {
               </Link>
             </>
           )}
-          <Link to="/notifications">
+          {/* <Link to="/notifications">
             <button
               style={{
                 width: "48px",
@@ -203,7 +207,7 @@ function Navbar() {
             >
               🔔
             </button>
-          </Link>
+          </Link> */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             style={{
