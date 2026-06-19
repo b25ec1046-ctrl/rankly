@@ -32,12 +32,22 @@ function Trending() {
     <>
       {" "}
       <Navbar />
-      <div
+      {/* <div
         style={{
           maxWidth: "700px",
           margin: "auto",
           padding: "20px",
           paddingBottom: "90px",
+        }}
+      > */}
+      <div
+        style={{
+          maxWidth: "700px",
+          width: "100%",
+          margin: "0 auto",
+          padding: window.innerWidth <= 768 ? "12px" : "20px",
+          paddingBottom: "90px",
+          boxSizing: "border-box",
         }}
       >
         <h2
@@ -59,6 +69,7 @@ function Trending() {
             borderRadius: "10px",
             border: "1px solid #ddd",
             marginBottom: "15px",
+            boxSizing: "border-box",
           }}
         />
         {search &&
@@ -76,6 +87,7 @@ function Trending() {
                   marginBottom: "8px",
                   borderRadius: "10px",
                   cursor: "pointer",
+                  boxSizing: "border-box",
                 }}
               >
                 @{user.username}
