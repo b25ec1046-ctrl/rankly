@@ -121,7 +121,7 @@ function BottomNav() {
     flexDirection: "column",
     alignItems: "center",
 
-    gap: "4px",
+    // gap: "4px",
 
     fontSize: "11px",
     fontWeight: "600",
@@ -145,7 +145,7 @@ function BottomNav() {
           position: "fixed",
 
           left: "50%",
-          bottom: "20px",
+          bottom: "12px",
 
           transform: "translateX(-50%)",
 
@@ -182,7 +182,7 @@ function BottomNav() {
         style={{
           position: "fixed",
 
-          bottom: "12px",
+          bottom: "4px",
           left: "12px",
           right: "12px",
           height: "78px",

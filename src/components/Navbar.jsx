@@ -29,7 +29,8 @@ function Navbar() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "14px 25px",
+          // padding: "14px 25px",
+          padding: window.innerWidth <= 768 ? "8px 12px" : "14px 25px",
           background: "rgba(15,23,42,0.85)",
           backdropFilter: "blur(20px)",
           borderBottom: "1px solid rgba(255,255,255,0.08)",
@@ -43,7 +44,8 @@ function Navbar() {
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "12px",
+            // gap: "12px",
+            gap: window.innerWidth <= 768 ? "8px" : "12px",
           }}
         >
           <img
@@ -74,6 +76,7 @@ function Navbar() {
                 margin: 0,
                 fontSize: "11px",
                 color: "#94a3b8",
+                display: window.innerWidth <= 768 ? "none" : "block",
               }}
             >
               Social Ranking Platform
